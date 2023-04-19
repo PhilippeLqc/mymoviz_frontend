@@ -41,7 +41,10 @@ function Home() {
   useEffect(() => {
     fetch("https://mymoviz-backend-wine-chi.vercel.app/movies")
       .then((res) => res.json())
-      .then((TMBD) => setMoviesData(TMBD.movies));
+      .then((TMBD) => {
+        console.log('TMBD:', TMBD)
+        setMoviesData(TMBD.movies)
+      });
   }, []);
   // console.log('moviesData:', moviesData);
 
